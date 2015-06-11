@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.http.client;
+package com.nana.common.client;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-import com.intel.sto.bigdata.dew.utils.Util;
+import com.nana.common.utils.Util;
 
 /**
  * Http client post stream data to http server.<br>

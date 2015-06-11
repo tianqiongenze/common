@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.http.server;
+package com.nana.common.http.server;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
-import com.intel.sto.bigdata.dew.utils.Util;
+import com.nana.common.utils.Util;
 
 public class JettyStreamHandler extends AbstractHandler {
   private HttpStreamCallback cb;

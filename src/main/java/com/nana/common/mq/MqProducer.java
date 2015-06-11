@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.mq;
+package com.nana.common.mq;
 
 public interface MqProducer {
 

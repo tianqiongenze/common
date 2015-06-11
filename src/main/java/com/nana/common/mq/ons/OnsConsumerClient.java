@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.mq.ons;
+package com.nana.common.mq.ons;
 
 import java.util.Properties;
 
@@ -9,8 +9,8 @@ import com.aliyun.openservices.ons.api.Message;
 import com.aliyun.openservices.ons.api.MessageListener;
 import com.aliyun.openservices.ons.api.ONSFactory;
 import com.aliyun.openservices.ons.api.PropertyKeyConst;
-import com.intel.sto.bigdata.dew.mq.ConsumerListener;
-import com.intel.sto.bigdata.dew.mq.MqConsumer;
+import com.nana.common.mq.ConsumerListener;
+import com.nana.common.mq.MqConsumer;
 
 public class OnsConsumerClient implements MqConsumer {
 

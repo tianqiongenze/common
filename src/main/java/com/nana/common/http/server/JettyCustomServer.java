@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.http.server;
+package com.nana.common.http.server;
 
 import java.io.FileInputStream;
 

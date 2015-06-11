@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.mq.ons;
+package com.nana.common.mq.ons;
 
 import java.util.Properties;
 
@@ -6,7 +6,7 @@ import com.aliyun.openservices.ons.api.Message;
 import com.aliyun.openservices.ons.api.ONSFactory;
 import com.aliyun.openservices.ons.api.Producer;
 import com.aliyun.openservices.ons.api.PropertyKeyConst;
-import com.intel.sto.bigdata.dew.mq.MqProducer;
+import com.nana.common.mq.MqProducer;
 
 public class OnsProducerClient implements MqProducer {
 	Producer producer;

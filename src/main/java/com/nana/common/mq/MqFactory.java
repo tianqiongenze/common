@@ -1,10 +1,10 @@
-package com.intel.sto.bigdata.dew.mq;
+package com.nana.common.mq;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.intel.sto.bigdata.dew.mq.ons.OnsConsumerClient;
-import com.intel.sto.bigdata.dew.mq.ons.OnsProducerClient;
+import com.nana.common.mq.ons.OnsConsumerClient;
+import com.nana.common.mq.ons.OnsProducerClient;
 
 public class MqFactory {
 

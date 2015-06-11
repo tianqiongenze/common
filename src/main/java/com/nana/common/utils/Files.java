@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.utils;
+package com.nana.common.utils;
 
 import java.io.BufferedReader;
 import java.io.File;

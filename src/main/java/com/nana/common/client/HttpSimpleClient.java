@@ -1,4 +1,4 @@
-package com.intel.sto.bigdata.dew.http.client;
+package com.nana.common.client;
 
 import java.util.HashMap;
 import java.util.Map;
