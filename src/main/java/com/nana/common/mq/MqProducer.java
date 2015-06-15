@@ -4,5 +4,5 @@ public interface MqProducer {
 
 	void shutDown();
 
-	void sendMessage(String key, String tag, byte[] body);
+	void sendMessage(String topic, String key, String tag, byte[] body);
 }
