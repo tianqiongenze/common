@@ -31,10 +31,10 @@ public class OnsProducerClient implements MqProducer {
 	}
 
 	@Override
-	public void sendMessage(String key, String tag, byte[] body) {
+	public void sendMessage(String topic,String key, String tag, byte[] body) {
 		Message msg = new Message(
 		// Message Topic
-				"DEV_NANA_1",
+				topic,
 				// Message Tag,
 				// 可理解为Gmail中的标签，对消息进行再归类，方便Consumer指定过滤条件在ONS服务器过滤
 				tag,
@@ -45,6 +45,7 @@ public class OnsProducerClient implements MqProducer {
 		// 设置代表消息的业务关键属性，请尽可能全局唯一。
 		// 以方便您在无法正常收到消息情况下，可通过ONS Console查询消息并补发。
 		// 注意：不设置也不会影响消息正常收发
+		msg.setTopic(topic);
 		msg.setKey(key);
 
 		producer.send(msg);
