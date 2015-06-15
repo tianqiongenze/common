@@ -31,7 +31,7 @@ public class OnsProducerClient implements MqProducer {
 	}
 
 	@Override
-	public void sendMessage(String topic ,String key, String tag, byte[] body) {
+	public void sendMessage(String topic, String key, String tag, byte[] body) {
 		Message msg = new Message(
 		// Message Topic
 				topic, 
