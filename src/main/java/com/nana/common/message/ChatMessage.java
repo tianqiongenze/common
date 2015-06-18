@@ -1,6 +1,6 @@
-package com.nana.common.utils;
+package com.nana.common.message;
 
-public class Message {
+public class  ChatMessage{
 	private String id;
 	private int type;
 	private String content;
