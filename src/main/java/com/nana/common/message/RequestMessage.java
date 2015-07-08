@@ -7,6 +7,7 @@ package com.nana.common.message;
 public class RequestMessage {
 	private String id;// user id
 	private int type;// message type: original, robot processed,
+	private String username;//name of user
 	private String content;// message text
 	private GPS gps;// GPS info
 	private int mobileType;// iOS 0, android 1
@@ -51,4 +52,11 @@ public class RequestMessage {
 		this.content = content;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }

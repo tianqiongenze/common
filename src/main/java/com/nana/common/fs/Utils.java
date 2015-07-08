@@ -43,8 +43,8 @@ public class Utils {
 	public static ChatRecord parseChatRecord(String str) {
 		ChatRecord cr = new ChatRecord();
 		cr.setType(Integer.valueOf(str.substring(0, 1)));
-		cr.setText(str.substring(9));
-		cr.setTimestamp(Long.valueOf(str.substring(1, 9)));
+		cr.setText(str.substring(20));
+		cr.setTimestamp(str.substring(1, 20));
 		return cr;
 
 	}
@@ -53,7 +53,7 @@ public class Utils {
 		mCr.setType(1);
 		mCr.setText("你好。");
 		mCr.setGps("0");
-		mCr.setTimestamp(12345678L);
+		mCr.setTimestamp("2015-07-07 14:12:22");
 		mCr.setAudio(null);
 		String str=mCr.toString();
 		ChatRecord cr=parseChatRecord(str);

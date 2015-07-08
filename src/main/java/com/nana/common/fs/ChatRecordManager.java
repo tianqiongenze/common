@@ -1,33 +1,92 @@
 package com.nana.common.fs;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ChatRecordManager {
+
 	ChatFile cf = new LocalChatFile();
+
+	private static final ChatRecordManager manager = new ChatRecordManager();
+
+	private ChatRecordManager() {
+
+	}
+
+	public static ChatRecordManager getinstance() {
+		return manager;
+	}
 
 	public void addRecord(String id, ChatRecord record) {
 		File file = cf.getFile(id);
+		FileWriter writer = null;
 		try {
-			FileWriter writer = new FileWriter(file, true);
+			writer = new FileWriter(file, true);
 			writer.write(record.toString() + "\r\n");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			if (writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
+	// 读文件的保存的文件内容
 	public List<ChatRecord> getRecords(String id) {
-		return null;
+		File file = cf.getFile(id);
+		List<ChatRecord> list = new ArrayList<ChatRecord>();
+		Utils.parseChatRecord(id);
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			String str = null;
+			while ((str = br.readLine()) != null) {
+				String[] s = str.split("#");
+				// 组装成一个ChatRecord对象
+				ChatRecord crecord = new ChatRecord();
+				crecord.setType(Integer.parseInt(s[0]));
+				// crecord.setTimestamp(Long.parseLong(s[1]));
+				crecord.setText(s[2]);
+				list.add(crecord);
+			}
+			br.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 	public static void main(String[] args) {
 		ChatRecordManager crm = new ChatRecordManager();
-		crm.addRecord("3432", new ChatRecord(1, 234234L, "hello"));
-		crm.addRecord("3432", new ChatRecord(1, 234234L, "hi"));
-		crm.addRecord("232", new ChatRecord(1, 234234L, "hello"));
+		// crm.addRecord("3432", new ChatRecord(1, 29834234L, "hello"));
+		// crm.addRecord("3432", new ChatRecord(1, 2342934L, "hi"));
+		// crm.addRecord("232", new ChatRecord(1, 234234L, "hello"));
+		// List<ChatRecord> list = crm.getRecords("232");
+
+		Date date = new Date(999999999L);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		System.out.println(sdf.format(date));
+		// for (ChatRecord r : list) {
+		// System.out.println(r.getText());
+		// System.out.println(r.getText());
+		// }
 	}
 
 }

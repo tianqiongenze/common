@@ -6,13 +6,13 @@ public class ChatRecord {
 	private int type;// 消息类型，0 用户 1 机器人 2 客服
 	private String text; // 消息文本
 	private String gps; // 发消息时gps数据,只有用户消息才需要。 TODO
-	private long timestamp;// 消息时间戳
+	private String timestamp;// 消息时间戳 yyyy-mm-dd hh:mm:ss
 	private byte[] audio;// 音频数据 TODO
 
 	public ChatRecord() {
 	}
 
-	public ChatRecord(int type, long timestamp, String text) {
+	public ChatRecord(int type, String timestamp, String text) {
 		this.type = type;
 		this.timestamp = timestamp;
 		this.text = text;
@@ -42,11 +42,11 @@ public class ChatRecord {
 		this.gps = gps;
 	}
 
-	public long getTimestamp() {
+	public String getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(long timestamp) {
+	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
 
@@ -61,7 +61,7 @@ public class ChatRecord {
 	public byte[] toArray() {
 		byte[] typeBytes = Utils.int2bytes(type);
 		byte[] textBytes = text.getBytes();
-		byte[] timeBytes = Utils.long2bytes(timestamp);
+		byte[] timeBytes = timestamp.getBytes();
 
 		ByteBuffer bf = ByteBuffer.allocate(typeBytes.length + timeBytes.length
 				+ textBytes.length);
@@ -73,7 +73,7 @@ public class ChatRecord {
 	}
 
 	public String toString() {
-		return String.valueOf(type) + String.valueOf(timestamp) + text;
+		return String.valueOf(type) + timestamp + text;
 	}
 
 }
