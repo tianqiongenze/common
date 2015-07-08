@@ -9,7 +9,8 @@ public class ResponseMessage {
 	private int mobileType;// iOS 0, android 1
 	private String displayText; // display the text in app screen
 	private String audioText; // build audio by the text
-
+    private String name;//user name
+    
 	public String getId() {
 		return id;
 	}
@@ -42,4 +43,11 @@ public class ResponseMessage {
 		this.audioText = audioText;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

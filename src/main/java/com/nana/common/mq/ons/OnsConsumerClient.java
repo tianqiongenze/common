@@ -24,7 +24,7 @@ public class OnsConsumerClient implements MqConsumer {
 				"giGDCWrB1GVc0WxHghoYIoeRppfaAk");
 		Consumer consumer = ONSFactory.createConsumer(properties);
 		consumer.subscribe(topic, "*", new MessageListener() {
-
+       
 			public Action consume(Message message, ConsumeContext context) {
 				linstener.process(message.getKey(), message.getTag(),
 						message.getBody());
