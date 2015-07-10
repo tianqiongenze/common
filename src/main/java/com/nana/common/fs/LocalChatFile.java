@@ -4,8 +4,8 @@ import java.io.File;
 
 public class LocalChatFile implements ChatFile {
 
-	// TODO config it
-	// chat file path
+
+	//config it  chat file path
 	private String pathStr = "/home/nana/data";
 
 	private File path;
