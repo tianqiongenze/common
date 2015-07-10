@@ -6,7 +6,7 @@ public class LocalChatFile implements ChatFile {
 
 	// TODO config it
 	// chat file path
-	private String pathStr = "/Users/zhanxuejun/nana/data";
+	private String pathStr = "/home/nana/data";
 
 	private File path;
 
