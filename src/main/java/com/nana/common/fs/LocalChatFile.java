@@ -4,6 +4,7 @@ import java.io.File;
 
 public class LocalChatFile implements ChatFile {
 
+
 	//config it  chat file path
 	private String pathStr = "/home/nana/data";
 
