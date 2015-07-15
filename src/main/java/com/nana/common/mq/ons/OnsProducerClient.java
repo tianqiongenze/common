@@ -7,6 +7,7 @@ import com.aliyun.openservices.ons.api.ONSFactory;
 import com.aliyun.openservices.ons.api.Producer;
 import com.aliyun.openservices.ons.api.PropertyKeyConst;
 import com.nana.common.mq.MqProducer;
+import com.nana.common.utils.Property;
 
 public class OnsProducerClient implements MqProducer {
 	Producer producer;
@@ -14,9 +15,8 @@ public class OnsProducerClient implements MqProducer {
 	public OnsProducerClient(String pid) {
 		Properties properties = new Properties();
 		properties.put(PropertyKeyConst.ProducerId, pid);
-		properties.put(PropertyKeyConst.AccessKey, "mnh7WpQZQY9TXzRd");
-		properties.put(PropertyKeyConst.SecretKey,
-				"giGDCWrB1GVc0WxHghoYIoeRppfaAk");
+		properties.put(PropertyKeyConst.AccessKey, Property.getInstance().getCfg("AccessKey"));
+		properties.put(PropertyKeyConst.SecretKey,Property.getInstance().getCfg("SecretKey"));
 		producer = ONSFactory.createProducer(properties);
 
 		// 在发送消息前，必须调用start方法来启动Producer，只需调用一次即可。
