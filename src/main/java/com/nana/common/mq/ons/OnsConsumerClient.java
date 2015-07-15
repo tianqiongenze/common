@@ -11,6 +11,7 @@ import com.aliyun.openservices.ons.api.ONSFactory;
 import com.aliyun.openservices.ons.api.PropertyKeyConst;
 import com.nana.common.mq.ConsumerListener;
 import com.nana.common.mq.MqConsumer;
+import com.nana.common.utils.Property;
 
 public class OnsConsumerClient implements MqConsumer {
 
@@ -19,9 +20,9 @@ public class OnsConsumerClient implements MqConsumer {
 
 		Properties properties = new Properties();
 		properties.put(PropertyKeyConst.ConsumerId, cid);
-		properties.put(PropertyKeyConst.AccessKey, "mnh7WpQZQY9TXzRd");
+		properties.put(PropertyKeyConst.AccessKey, Property.getInstance().getCfg("AccessKey"));
 		properties.put(PropertyKeyConst.SecretKey,
-				"giGDCWrB1GVc0WxHghoYIoeRppfaAk");
+				 Property.getInstance().getCfg("SecretKey"));
 		Consumer consumer = ONSFactory.createConsumer(properties);
 		consumer.subscribe(topic, "*", new MessageListener() {
        

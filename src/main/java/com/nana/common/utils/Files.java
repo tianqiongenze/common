@@ -49,7 +49,7 @@ public class Files {
   }
 
   public static Map<String, String> loadPropertiesFile(String fileName) throws Exception {
-    return loadPropertiesFile(Files.class.getResourceAsStream(fileName));
+    return loadPropertiesFile(Files.class.getClassLoader().getResourceAsStream(fileName));
   }
 
   public static Set<String> loadResourceFile(String fileName) throws Exception {

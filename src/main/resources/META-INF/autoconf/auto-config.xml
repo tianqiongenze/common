@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<group>
+		<property name="cid1" />
+		<property name="topic1" />
+		<property name="cid2" />
+		<property name="topic2" />
+		<property name="cid3" />
+		<property name="topic3"/>
+		<property name="pid1" />
+		<property name="pid2" />
+		<property name="pid3" />
+		<property name="cid4" />
+		<property name="cid5" />
+		<property name="PropertyKeyConst.AccessKey" />
+		<property name="PropertyKeyConst.SecretKey" />
+	</group>
+	<script>
+		<generate template="config.properties.vm"
+			destfile="config.properties" />
+	</script>
+</config>

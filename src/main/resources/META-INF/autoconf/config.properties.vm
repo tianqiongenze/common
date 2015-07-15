@@ -1,0 +1,13 @@
+cid1=${cid1}
+topic1=${topic1}
+cid2=${cid2}
+topic2=${topic2}
+cid3=${cid3}
+topic3=${topic3}
+pid1=${pid1}
+pid2=${pid2}
+pid3=${pid3}
+cid4=${cid4}
+cid5=${cid5}
+AccessKey=${PropertyKeyConst.AccessKey}
+SecretKey=${PropertyKeyConst.SecretKey}

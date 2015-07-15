@@ -2,6 +2,7 @@ package com.nana.common.mq.ons;
 
 import com.nana.common.mq.ConsumerListener;
 import com.nana.common.mq.MqFactory;
+import com.nana.common.utils.Property;
 
 public class MessageReader {
 
@@ -20,8 +21,8 @@ public class MessageReader {
 			}
 		};
 
-		String cid = "CID_DEV_NANA_2";
-		String topic = "DEV_NANA_2";
+		String cid = Property.getInstance().getCfg("cid2");
+		String topic = Property.getInstance().getCfg("topic2");
 		MqFactory.startMqConsumer(cid, topic, linstener);
 	}
 
