@@ -12,6 +12,7 @@ public class LocalChatFile implements ChatFile {
 
 	public LocalChatFile() {
 		path = new File(pathStr);
+		path.setWritable(true, false);
 		if (!path.exists()) {
 			path.mkdirs();
 		}
