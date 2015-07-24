@@ -29,7 +29,7 @@ public class LocalChatFile implements ChatFile {
 	}
 
 	private String hashPath(String id) {
-		int first = id.hashCode() % 2000;
+		int first = Math.abs(id.hashCode() % 2000);
 		return String.valueOf(first);
 	}
 	
